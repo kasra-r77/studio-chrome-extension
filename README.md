@@ -18,7 +18,7 @@ once you install the extension and login, you have the ability to to add YouTube
 
 ## Download caption button in YouTube
 
-When opening YouTube videos, enable and English caption (auto generated is fine as well) and a download button appears which clicking on it will add the subtitle to your newly created YouTube media in Studio
+When opening YouTube videos, enable an English caption (auto generated is fine as well) and a download button appears which clicking on it will add the subtitle to your newly created YouTube media in Studio
 
 ### `npm run build`
 
