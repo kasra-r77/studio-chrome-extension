@@ -1,26 +1,50 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState, useRef } from "react";
+import Login from "./components/Login";
+import MyLibrary from "./components/MyLibrary";
+import axios from "axios";
 
-function App() {
+import "./global.css";
+
+const App = () => {
+  const [isAuthorized, setIsAuthorized] = useState(false);
+
+  let userDisplayName = useRef<string>();
+  let userAvatarUrl = useRef<string>();
+
+  useEffect(() => {
+    chrome.storage.local
+      .get([
+        "authToken",
+        "userID",
+        "userDisplayName",
+        "userAvatarUrl",
+        "studioDomain",
+      ])
+      .then((result) => {
+        if (result.authToken && result.userID) {
+          userDisplayName.current = result.userDisplayName;
+          userAvatarUrl.current = result.userAvatarUrl;
+          axios.defaults.headers.common = {
+            Authorization: `Bearer user_id="${result.userID}",token="${result.authToken}"`,
+          };
+          axios.defaults.baseURL = result.studioDomain;
+          setIsAuthorized(true);
+        }
+      });
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="Container">
+      {isAuthorized ? (
+        <MyLibrary
+          userAvatarUrl={userAvatarUrl.current}
+          userDisplayName={userDisplayName.current}
+        />
+      ) : (
+        <Login setIsAuthorized={setIsAuthorized} />
+      )}
     </div>
   );
-}
+};
 
 export default App;

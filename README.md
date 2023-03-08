@@ -1,46 +1,37 @@
-# Getting Started with Create React App
+# Studio chrome extension
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This extension is meant for managing your Studio easier. Ultimately, Studio will always be available within a click. The extension has been built using react and bundled via webpack
 
-## Available Scripts
+## Available functionalities
 
-In the project directory, you can run:
+at the moment the following functionalities are available:
 
-### `npm start`
+- Listing collections
+- Listing media within a collection
+- Downloading uploaded media
+- Add Youtube videos directly from youtube website or any website that embeds youtube video
+- Download YouTube caption directly to your newly added Youtube video to Studio
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Studio button in YouTube
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+once you install the extension and login, you have the ability to to add YouTube videos directly into your Studio library by clicking on the Studio logo shown as a button available at Youtube video player controls
 
-### `npm test`
+## Download caption button in YouTube
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+When opening YouTube videos, enable and English caption (auto generated is fine as well) and a download button appears which clicking on it will add the subtitle to your newly created YouTube media in Studio
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Build the app and outputs it to `dist` folder
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `npm run watch`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Starts webpack in watch mode and re-builds the app on every change
 
-### `npm run eject`
+## Known issues
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- If you have the same YouTube video for different users, download button will always add it to first media which needs a follow up
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Contributing
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Bug reports and pull requests are welcomed at https://github.com/kasra-r77/studio-chrome-extension

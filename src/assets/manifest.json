@@ -1,0 +1,33 @@
+{
+  "name": "Studio",
+  "description": "Studio video manager chrome extension",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": [ "storage", "downloads", "tabs", "webRequest"],
+  "action": {
+      "default_popup": "index.html",
+      "default_title": "Studio plugin"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*/*"],
+      "js": ["contentScript.js"],
+      "all_frames": true
+    }
+  ],
+  "host_permissions": ["<all_urls>"],
+  "icons": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "web_accessible_resources":[
+    {
+    "resources": [ "icon-white.png", "download-icon.png" ],
+    "matches": [ "https://*/*" ]
+    }
+  ]
+}

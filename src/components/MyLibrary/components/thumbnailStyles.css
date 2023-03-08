@@ -1,0 +1,10 @@
+.ThumbnailGroup {
+  display: grid;
+  width: 85px;
+  height: 85px;
+  background-color: white;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 0.25rem;
+  border: 3px white solid;
+}

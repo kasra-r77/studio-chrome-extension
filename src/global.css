@@ -1,0 +1,20 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #F5F5F5;
+  height: 600px;
+  width: 400px;
+  overflow-y: scroll;
+  display: block;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.Container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
